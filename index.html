@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Addendas TI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container"><img src="logo.png" alt="Logo Grupo Proyecta">
+            <div>
+                <h1>Portal de Addendas CFDI</h1>
+                <div class="subtitulo">Grupo Proyecta</div>
+            </div>
+        </div>
+    </header>
+    <div class="panel">
+        <div id="paso1">
+            <div class="numero">1</div>
+            <h2>Selecciona tu archivo XML</h2><input type="file" id="xmlFile" accept=".xml">
+            <div class="botones"><button id="btnSiguiente">Continuar</button></div>
+        </div>
+        <div id="paso2" style="display:none">
+            <div class="numero">2</div>
+            <h2>Generación de Addenda</h2>
+            <div class="radio-container"><label><input type="radio" name="tipo" value="OC" checked> ORDEN DE
+                    COMPRA</label><label><input type="radio" name="tipo" value="RPI"> RECEPCIÓN PARCIAL</label></div>
+            <input id="rfc" readonly><input id="nombre" readonly>
+            <div id="ocContainer"><select id="empresa">
+                    <option value="">[EMPRESA]</option>
+                </select><input id="ordenCompra" placeholder="Número de orden"></div>
+            <div id="rpiContainer" style="display:none"><input id="rpi" placeholder="Número RPI"></div><input id="total"
+                readonly><input id="descripcion" placeholder="DESCRIPCION DE LINEA">
+            <div class="botones"><button id="btnNuevo">Iniciar de nuevo</button><button id="btnFinalizar">Generar
+                    XML</button></div>
+        </div>
+
+<div
+id="mensajeAddenda"
+class="mensaje-error"
+style="display:none;">
+
+La Addenda de Grupo Proyecta ya existe en dicho documento.
+
+</div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
